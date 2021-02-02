@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ReminderPageActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:background="@drawable/ic_home_top">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="45dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:includeFontPadding="false"
+                    android:text="Kindly set a\nreminder for\nyour study"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView19" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:srcCompat="@drawable/ic_reminder_img" />
+
+                <ImageView
+                    android:id="@+id/imageView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_back_arrow" />
+
+                <TextView
+                    android:id="@+id/textView34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:includeFontPadding="false"
+                    android:text="Set Reminder"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.408"
+                    app:layout_constraintStart_toEndOf="@+id/imageView19"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:padding="10dp">
+
+                    <Spinner
+                        android:id="@+id/spinner_day_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:dropDownWidth="match_parent"
+                        android:textAlignment="center"
+                        android:layout_marginBottom="10dp"
+                        android:layout_alignParentTop="true"
+                        android:entries="@array/days" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="2dp"
+                        android:layout_below="@id/spinner_day_one"
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:id="@+id/imageView20_one"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                app:srcCompat="@drawable/ic_clock_big" />
+
+                            <TextView
+                                android:id="@+id/textView35_one"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:text="10:00 AM"
+                                android:layout_centerHorizontal="true"
+                                android:textColor="#3F3D56"
+                                android:textSize="24sp" />
+
+                            <Spinner
+                                android:id="@+id/spinner_subj_one"
+                                android:layout_width="170dp"
+                                android:layout_height="wrap_content"
+                                android:dropDownWidth="wrap_content"
+                                android:popupBackground="@android:color/white"
+                                android:textAlignment="center"
+                                android:layout_centerInParent="true"
+                                android:layout_below="@id/textView35_one"
+                                android:entries="@array/subjects"/>
+
+                            <ImageView
+                                android:id="@+id/button17_one"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:tag="switch"
+                                android:layout_alignParentRight="true"
+                                app:srcCompat="@drawable/ic_toggle_off_btn" />
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:padding="10dp">
+
+                    <Spinner
+                        android:id="@+id/spinner_day_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:dropDownWidth="match_parent"
+                        android:textAlignment="center"
+                        android:layout_marginBottom="10dp"
+                        android:layout_alignParentTop="true"
+                        android:entries="@array/days" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="2dp"
+                        android:layout_below="@id/spinner_day_one"
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:id="@+id/imageView20_one"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                app:srcCompat="@drawable/ic_clock_big" />
+
+                            <TextView
+                                android:id="@+id/textView35_one"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:text="10:00 AM"
+                                android:layout_centerHorizontal="true"
+                                android:textColor="#3F3D56"
+                                android:textSize="24sp" />
+
+                            <Spinner
+                                android:id="@+id/spinner_subj_one"
+                                android:layout_width="170dp"
+                                android:layout_height="wrap_content"
+                                android:dropDownWidth="wrap_content"
+                                android:popupBackground="@android:color/white"
+                                android:textAlignment="center"
+                                android:layout_centerInParent="true"
+                                android:layout_below="@id/textView35_one"
+                                android:entries="@array/subjects"/>
+
+                            <ImageView
+                                android:id="@+id/button17_one"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:tag="switch"
+                                android:layout_alignParentRight="true"
+                                app:srcCompat="@drawable/ic_toggle_on_btn" />
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/next"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/drop_shadow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_add_reminder" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

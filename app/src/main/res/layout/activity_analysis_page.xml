@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    tools:context=".AnalysisPageActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/imageView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            app:srcCompat="@drawable/ic_back_arrow_blue" />
+
+        <TextView
+            android:id="@+id/textView62"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/mali_medium"
+            android:gravity="center_horizontal"
+            android:text="Learning Analysis"
+            android:textColor="@color/appBlue"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="20dp">
+
+               <FrameLayout
+                   android:layout_width="200dp"
+                   android:layout_height="200dp"
+                   android:layout_gravity="center"
+                   >
+
+                   <ProgressBar
+                       android:id="@+id/spercent"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:layout_gravity="center"
+                       android:indeterminate="false"
+                       android:progressDrawable="@drawable/circular_bar"
+                       android:background="@drawable/circular_shape"
+                       style="?android:attr/progressBarStyleHorizontal"
+                       android:max="100"
+                       android:scaleX="-1"
+                       android:progress="75" />
+
+                   <RelativeLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent">
+
+                       <TextView
+                           android:id="@+id/textView40"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:fontFamily="@font/montserrat_regular"
+                           android:text="75%"
+                           android:textColor="@color/appBlue"
+                           android:layout_centerInParent="true"
+                           android:textSize="24sp" />
+                       <TextView
+                           android:id="@+id/textView41"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_centerInParent="true"
+                           android:layout_below="@id/textView40"
+                           android:fontFamily="@font/montserrat_regular"
+                           android:text="accuracy" />
+
+                   </RelativeLayout>
+
+               </FrameLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginBottom="15dp"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:id="@+id/quest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/mali_medium"
+                        android:gravity="center"
+                        android:text="Questions"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:layout_alignParentLeft="true">
+
+
+                            <ImageView
+                                android:id="@+id/imageView24"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginRight="10dp"
+                                app:srcCompat="@drawable/checked" />
+
+                            <TextView
+                                android:id="@+id/correct"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:gravity="center"
+                                android:text="20 Correct"
+                                android:textAlignment="center"
+                                android:textColor="#57576B"
+                                android:textSize="17sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/answered"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:gravity="center"
+                            android:text="20 Answered"
+                            android:layout_alignParentRight="true"
+                            android:textAlignment="center"
+                            android:textColor="#57576B"
+                            android:textSize="17sp" />
+
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/bline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/bline" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_alignParentLeft="true">
+
+
+                        <ImageView
+                            android:id="@+id/imageView300"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginRight="10dp"
+                            app:srcCompat="@drawable/ncheck" />
+
+                        <TextView
+                            android:id="@+id/wrong"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:gravity="center"
+                            android:text="10 Incorrect"
+                            android:textAlignment="center"
+                            android:textColor="#57576B"
+                            android:textSize="17sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/uanswered"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:gravity="center"
+                        android:text="10 Unanswered"
+                        android:layout_alignParentRight="true"
+                        android:textAlignment="center"
+                        android:textColor="#57576B"
+                        android:textSize="17sp" />
+
+
+
+                </RelativeLayout>
+
+
+                <ImageView
+                    android:id="@+id/aline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="15dp"
+                    app:srcCompat="@drawable/bline" />
+
+
+
+
+                <LinearLayout
+                    android:id="@+id/timer_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                   <RelativeLayout
+                       android:layout_width="70dp"
+                       android:layout_gravity="center"
+                       android:layout_height="70dp">
+
+                       <TextView
+                           android:id="@+id/textView42"
+                           android:layout_alignParentTop="true"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:gravity="center"
+                           android:paddingBottom="8dp"
+                           android:layout_centerHorizontal="true"
+                           android:text="Average speed"
+                           android:textSize="10sp" />
+
+                       <FrameLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:layout_below="@id/textView42">
+                           <ProgressBar
+                               android:id="@+id/average"
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent"
+                               android:layout_gravity="center"
+                               android:indeterminate="false"
+                               android:progressDrawable="@drawable/circular_bar"
+                               android:background="@drawable/circular_shape"
+                               style="?android:attr/progressBarStyleHorizontal"
+                               android:max="100"
+                               android:scaleX="-1"
+                               android:progress="75" />
+
+                           <RelativeLayout
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent">
+
+                           <TextView
+                               android:id="@+id/aspeed"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_gravity="center"
+                               android:fontFamily="@font/montserrat_regular"
+                               android:text="01"
+                               android:textColor="#A8A8A8"
+                               android:layout_centerInParent="true"
+                               android:textSize="15dp" />
+                           </RelativeLayout>
+                       </FrameLayout>
+
+
+
+                   </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView43"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Time spent on practise"
+                            android:paddingBottom="10dp"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/textView44"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/verify_boxes"
+                            android:drawableRight="@drawable/ic_clock_icon_blue_24"
+                            android:drawablePadding="30dp"
+                            android:padding="10dp"
+                            android:text="mm:ss" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="40dp">
+                    <ImageView
+                        android:id="@+id/sdiag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="10dp"
+                        app:srcCompat="@drawable/statdiagram" />
+                </RelativeLayout>
+
+
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+</LinearLayout>

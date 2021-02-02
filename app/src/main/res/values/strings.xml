@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">ExamplanetWaec</string>
+    <string name="welc_note">Welcome to Examplanet Mobile \nApp For Waec Practice</string>
+    <string name="title_activity_reminder_page">ReminderPageActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="your_string_here">This is an <u>underline</u>.</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+    <string-array name="days">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>All</item>
+    </string-array>
+
+    <string-array name="subjects">
+        <item>English Language</item>
+        <item>Mathematics</item>
+        <item>Biology</item>
+        <item>Chemistry</item>
+        <item>Physics</item>
+        <item>Agriculture</item>
+        <item>Geography</item>
+        <item>Economics</item>
+        <item>Accounting</item>
+        <item>Commerce</item>
+        <item>Lierature</item>
+        <item>Further Mathemathics</item>
+        <item>C.R.K</item>
+        <item>French</item>
+    </string-array>
+
+    <string-array name="times">
+        <item>12:00 AM</item>
+        <item>01:00 AM</item>
+        <item>02:00 AM</item>
+        <item>03:00 AM</item>
+        <item>04:00 AM</item>
+        <item>05:00 AM</item>
+        <item>06:00 AM</item>
+        <item>07:00 AM</item>
+        <item>08:00 AM</item>
+        <item>09:00 AM</item>
+        <item>10:00 AM</item>
+        <item>11:00 AM</item>
+        <item>12:00 PM</item>
+        <item>01:00 PM</item>
+        <item>02:00 PM</item>
+        <item>03:00 PM</item>
+        <item>04:00 PM</item>
+        <item>05:00 PM</item>
+        <item>06:00 PM</item>
+        <item>07:00 PM</item>
+        <item>08:00 PM</item>
+        <item>09:00 PM</item>
+        <item>10:00 PM</item>
+        <item>11:00 PM</item>
+    </string-array>
+</resources>

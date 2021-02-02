@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "398468195496",
+    "project_id": "examplanet-858a9",
+    "storage_bucket": "examplanet-858a9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398468195496:android:064e72ca2ce3ded36ace9d",
+        "android_client_info": {
+          "package_name": "com.example.examplanetwaec"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398468195496-de03un62dos5c1htv1p3052pc8d77387.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAy87C6-KOHvb2QzpRXvBY9PMHmSkMUlk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "398468195496-de03un62dos5c1htv1p3052pc8d77387.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

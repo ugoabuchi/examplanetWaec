@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:paddingRight="40dp"
+    android:paddingLeft="40dp"
+    tools:context=".exam">
+
+    <RelativeLayout
+        android:id="@+id/exam_box"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/imageView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_back_arrow_blue" />
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="Physics Examination Practice"
+                    android:textColor="@color/appBlue"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/next"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/ourtimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="00:00"
+                    android:layout_alignParentLeft="true"
+                    android:textColor="@color/appBlue"
+                    android:background="@drawable/my"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="6dp"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/mysubmit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="3dp"
+                    app:srcCompat="@drawable/sbutton" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+        <HorizontalScrollView
+            android:id="@+id/gcont"
+            android:layout_below="@id/top"
+            android:layout_width="match_parent"
+            android:background="#ffffff"
+            android:visibility="invisible"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <GridLayout
+                    android:id="@+id/l80"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:columnCount="10"
+                    android:useDefaultMargins="true"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal">
+
+                </GridLayout>
+            </ScrollView>
+
+        </HorizontalScrollView>
+        <WebView
+            android:id="@+id/dquestion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_below="@+id/top"/>
+
+
+        <LinearLayout
+            android:id="@+id/bot"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:background="#ffffff"
+            android:paddingBottom="3dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/prevbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/prevarrowquestion" />
+
+            <Button
+                android:id="@+id/aoption"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="0"
+                android:tag="A"
+                android:text="A"
+                android:textColor="#080366"
+                android:fontFamily="@font/montserrat_bold"
+                android:layout_marginRight="25dp"
+                android:textSize="25sp"
+                android:background="@drawable/rounrbblue" />
+
+            <Button
+                android:id="@+id/boption"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="0"
+                android:tag="B"
+                android:text="B"
+                android:textColor="#080366"
+                android:fontFamily="@font/montserrat_bold"
+                android:layout_marginRight="25dp"
+                android:textSize="25sp"
+                android:background="@drawable/rounrbblue" />
+
+            <Button
+                android:id="@+id/coption"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="0"
+                android:tag="C"
+                android:text="C"
+                android:textColor="#080366"
+                android:fontFamily="@font/montserrat_bold"
+                android:layout_marginRight="25dp"
+                android:textSize="25sp"
+                android:background="@drawable/rounrbblue" />
+
+            <Button
+                android:id="@+id/doption"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="0"
+                android:tag="D"
+                android:text="D"
+                android:textColor="#080366"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="25sp"
+                android:background="@drawable/rounrbblue"/>
+
+            <ImageView
+                android:id="@+id/noption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/noption" />
+
+            <ImageView
+                android:id="@+id/nextbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/nextarrowquestion" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

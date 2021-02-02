@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_notify"
+            android:icon="@drawable/ic_nav_notify_icon"
+            android:title="Notification"/>
+
+        <item
+            android:id="@+id/nav_study"
+            android:icon="@drawable/ic_study_tips_icon"
+            android:title="Study Tips"/>
+        <item
+            android:id="@+id/nav_remind"
+            android:icon="@drawable/ic_alarm_icon"
+            android:title="Set a Reminder"/>
+        <item
+            android:id="@+id/nav_sub"
+            android:icon="@drawable/ic_sub_icon"
+            android:title="Subcription"/>
+        <item
+            android:id="@+id/nav_practice"
+            android:icon="@drawable/ic_analysis_icon"
+            android:title="Practising Analysis"/>
+        <item
+            android:id="@+id/nav_contact"
+            android:icon="@drawable/ic_contact_icon"
+            android:title="Contact us"/>
+    </group>
+
+</menu>

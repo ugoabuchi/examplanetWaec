@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dmain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".checkVideo">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/back2"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        app:backgroundTint="#ffffff"
+        app:srcCompat="@drawable/ic_back_arrow_blue"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="7dp"/>
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/fvideo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationZ="99dp"
+        android:visibility="invisible"
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/maincont"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"
+        >
+        <RelativeLayout
+            android:id="@+id/exam_box"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/top"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true">
+
+                <ImageView
+                    android:id="@+id/imageView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    app:srcCompat="@drawable/ic_back_arrow_blue" />
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="Physics Examination Practice"
+                    android:textColor="@color/appBlue"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/fullscreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    app:srcCompat="@drawable/fscreen" />
+
+
+
+
+            </RelativeLayout>
+
+
+            <HorizontalScrollView
+                android:id="@+id/gcont"
+                android:layout_below="@id/top"
+                android:layout_width="match_parent"
+                android:background="#ffffff"
+                android:visibility="invisible"
+                android:layout_height="match_parent">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <GridLayout
+                        android:id="@+id/l80"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:columnCount="10"
+                        android:useDefaultMargins="true"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center_horizontal">
+
+                    </GridLayout>
+                </ScrollView>
+
+            </HorizontalScrollView>
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/dvideo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:keepScreenOn="true"
+                android:focusable="true"
+                android:layout_below="@+id/top"
+                app:show_buffering="always"/>
+
+
+
+
+
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+

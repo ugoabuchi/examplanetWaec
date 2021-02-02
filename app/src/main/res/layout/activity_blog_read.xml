@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BlogReadActivity">
+
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/blogimage"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:id="@+id/imageView23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:translationZ="100dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                app:srcCompat="@drawable/ic_bluetopcurve" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:translationZ="100dp"
+                android:paddingLeft="20dp"
+                android:layout_marginTop="-90dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    app:srcCompat="@drawable/ic_back_arrow" />
+
+                <TextView
+                    android:id="@+id/textView34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:includeFontPadding="false"
+                    android:text="Blog"
+                    android:textColor="#ffffff"
+                    android:textSize="30sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <TextView
+                    android:id="@+id/blog_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text=""
+                    android:textColor="@color/appBlue"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/blog_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:lineSpacingExtra="8sp"
+                    android:paddingTop="10dp"
+                    android:text="The Delta State Government has sanctioned 41 teachers for examination malpractice during the 2019 West African Senior School Certificate Examination.\u000D\n\u000D\nThis is contained in a statement by Delta Commissioner for Basic and Secondary Education, Mr Patrick Ukah.\u000D\n\u000D\nUkah said the decisions were based on the recommendations by the Examination Ethics Disciplinary Committee of the state.\n\nThe 41 sanctioned teachers for exam malpractice in Delta State he said, \u00E2\u0080\u009CThey are to suffer deferment of promotion by one year and banned from the supervision of any school examination for a period of three years.\u000D\n\u000D\n\u00E2\u0080\u009CI have directed the Post Primary Education Board to implement the deferment of promotions by one year for the 41 affected teachers.\u000D\n\u000D\n\u00E2\u0080\u009CWhile others are being sanctioned, P.O. Okolo, is to be given a letter of commendation for a job well done during the examination.\u000D\n\u000D\n\u00E2\u0080\u009CThe principals and examination officers of 13 public secondary schools and one private secondary school indicted for examination malpractice are to be issued with letters of warning by PPEB to desist from acts of negligence.\u00E2\u0080\u009D\u000D\n\u000D\nUkah also approved Anointed Secondary School, Ubogo, Udu Local Government Area, which was closed down last year for examination malpractice be issued a warning letter and allowed to reopen to give the school a second chance to abide by laid down examination ethics.\u000D\n\u000D\nNAN reports that the Examination Ethics Disciplinary Committee, headed by the Permanent Secretary in the ministry, Sam Dietake.\u000D\n\u000D\nOther representatives are the PPEB, Ministry of Justice, Nigeria Union of Teachers, All Nigeria Conference of Principals of Secondary Schools, Association of Private School Owners of Nigeria, National Association of Proprietors of Private Schools, and other officials of the ministry.\u000D\n\u000D\n(NAN)"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

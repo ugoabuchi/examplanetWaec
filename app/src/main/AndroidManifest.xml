@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.examplanetwaec">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".AlarmScreen"></activity>
+        <activity android:name=".MyReminder" />
+        <activity
+            android:name=".AlarmPageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BlogActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".checkVideo"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".videosolution"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".exam"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".BlogReadActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".question"
+            android:screenOrientation="landscape" />
+        <activity android:name=".QuestionPageActivity" />
+        <activity
+            android:name=".HomePageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OnboardDarkOneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OnboardFiveActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OnboardFourActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OnboardThreeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OnboardTwoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OnboardOneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VerificationPageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignInPageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignUpPageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".splashActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ExamPractisePageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ReadyPageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ResultPageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AnalysisPageActivity"
+            android:screenOrientation="portrait" />
+
+        <receiver android:name=".MyBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+            </intent-filter>
+        </receiver>
+        <service android:name=".aservice"
+            android:enabled="true"/>
+
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
