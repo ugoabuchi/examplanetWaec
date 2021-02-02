@@ -9,7 +9,9 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.intent.category.DEFAULT" />
+    <uses-permission android:name="android.intent.action.QUICKBOOT_POWERON"/>
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
 
@@ -105,8 +107,15 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED"></action>
             </intent-filter>
         </receiver>
+        <receiver android:name=".BootCompleteReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
         <service android:name=".aservice"
-            android:enabled="true"/>
+            android:enabled="true"
+            android:stopWithTask="false"/>
 
         <activity
             android:name=".MainActivity"

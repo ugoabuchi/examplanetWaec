@@ -70,15 +70,15 @@ public class MyReminder extends AppCompatActivity {
             List<String> Alarmmytime= mySession.getAlarmmytime();
             List<String> Alarmcday= mySession.getAlarmcday();
             for (int i=0; i<AlarmID.size(); i++) {
-                Log.e("lists "+i, AlarmID.get(i).toString());
+                /*Log.e("lists "+i, AlarmID.get(i).toString());
                 Log.e("lists "+i, AlarmTime.get(i).toString());
                 Log.e("lists "+i, AlarmSubject.get(i).toString());
                 Log.e("lists "+i, AlarmStime.get(i).toString());
                 Log.e("lists "+i, AlarmMyday.get(i).toString());
                 Log.e("lists "+i, Alarmmytime.get(i).toString());
-                Log.e("lists "+i, Alarmcday.get(i).toString());
+                Log.e("lists "+i, Alarmcday.get(i).toString());*/
 
-                //contain.addView(reminderSkeleton(AlarmID.get(i), AlarmTime.get(i), AlarmSubject.get(i), AlarmStime.get(i), AlarmMyday.get(i), Alarmmytime.get(i), Alarmcday.get(i)));
+                contain.addView(reminderSkeleton(AlarmID.get(i), AlarmTime.get(i), AlarmSubject.get(i), AlarmStime.get(i), AlarmMyday.get(i), Alarmmytime.get(i), Alarmcday.get(i)));
             }
         }
         else {
@@ -235,7 +235,7 @@ public class MyReminder extends AppCompatActivity {
                     alarmManager.cancel(sender);
                     sender.cancel();
 
-                   Vibrator vibrate = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    Vibrator vibrate = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                     vibrate.vibrate(2000);
 
 
@@ -332,9 +332,20 @@ public class MyReminder extends AppCompatActivity {
         new Random().nextBytes(array);
         final String generatedString = new String(array, Charset.forName("UTF-8"));
         final boolean isSet[] = { false};
-        final int id = new Random().nextInt(3);
+        final int[] id = {new Random().nextInt()};
+        while(true)
+        {
+            if(mySession.alarmidexist(id[0]+"") == true)
+            {
+                id[0] = new Random().nextInt();
+            }
+            else
+            {
+                break;
+            }
+        }
         final Intent alarmIntent = new Intent(MyReminder.this, MyBroadcastReceiver.class);
-        alarmIntent.putExtra("id", id+"");
+        alarmIntent.putExtra("id", id[0]+"");
         final AlarmManager alarmManager = (AlarmManager)MyReminder.this.getSystemService(ALARM_SERVICE);
 
         //create the Constraint and set attributes
@@ -446,7 +457,7 @@ public class MyReminder extends AppCompatActivity {
                     ((Spinner)maincont.findViewWithTag("subjects"+generatedString)).setEnabled(true);
                     ((ImageView)maincont.findViewWithTag("delete"+generatedString)).setEnabled(true);
                     //to delete main cont view call maincont.setVisibility(View.GONE);
-                    PendingIntent sender = PendingIntent.getBroadcast(MyReminder.this, id, alarmIntent, 0);
+                    PendingIntent sender = PendingIntent.getBroadcast(MyReminder.this, id[0], alarmIntent, 0);
                     alarmManager.cancel(sender);
                     sender.cancel();
 
@@ -454,7 +465,7 @@ public class MyReminder extends AppCompatActivity {
                     vibrate.vibrate(2000);
 
                     //remove alarm to shared preference
-                    mySession.deleteAlarm(id+"");
+                    mySession.deleteAlarm(id[0]+"");
 
                 }
                 else {
@@ -486,10 +497,8 @@ public class MyReminder extends AppCompatActivity {
                         day = 5;
                     else if(((Spinner)maincont.findViewWithTag("days"+generatedString)).getSelectedItem().toString().equals("Friday"))
                         day = 6;
-                    else if(((Spinner)maincont.findViewWithTag("days"+generatedString)).getSelectedItem().toString().equals("Saturday"))
-                        day = 7;
                     else
-                        day = 8;
+                        day = 7;
 
                     //save to preference
 
@@ -519,7 +528,7 @@ public class MyReminder extends AppCompatActivity {
                     {
                         alarmIntent.putExtra("subject", subject);
                         alarmIntent.putExtra("time", hour+":00 "+dlight);
-                        PendingIntent pendingIntent = PendingIntent.getBroadcast(MyReminder.this, id, alarmIntent, 0);
+                        PendingIntent pendingIntent = PendingIntent.getBroadcast(MyReminder.this, id[0], alarmIntent, 0);
                         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY * 7, pendingIntent);
                     }
 
@@ -528,7 +537,7 @@ public class MyReminder extends AppCompatActivity {
                     vibrate.vibrate(2000);
 
                     //add alarm to shared preference
-                    mySession.addAlarm(id+"", calendar.getTimeInMillis(), subject, hour+":00 "+dlight, ((Spinner)maincont.findViewWithTag("days"+generatedString)).getSelectedItem().toString(),((Spinner)maincont.findViewWithTag("times"+generatedString)).getSelectedItem().toString(), calendar.get(Calendar.DAY_OF_WEEK)+"");
+                    mySession.addAlarm(id[0]+"", calendar.getTimeInMillis(), subject, hour+":00 "+dlight, ((Spinner)maincont.findViewWithTag("days"+generatedString)).getSelectedItem().toString(),((Spinner)maincont.findViewWithTag("times"+generatedString)).getSelectedItem().toString(), calendar.get(Calendar.DAY_OF_WEEK)+"");
 
 
                 }
@@ -540,7 +549,7 @@ public class MyReminder extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 RelativeLayout maincont = (RelativeLayout) ((((ImageView)v).getParent()).getParent()).getParent();
-                mySession.deleteAlarm(id+"");
+                mySession.deleteAlarm(id[0]+"");
                 maincont.setVisibility(View.GONE);
             }
         });

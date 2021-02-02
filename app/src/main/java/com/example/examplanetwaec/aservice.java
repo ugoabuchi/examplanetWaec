@@ -24,10 +24,12 @@ import android.widget.Toast;
  UI/UX: Olawale Damilola
  ***************************************************************************************/
 public class aservice extends Service {
-
+    private session mySession;
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        mySession = new session(getApplicationContext());
         //TODO do something useful
+        
         Intent dialogIntenta = new Intent(this, HomePageActivity.class);
         dialogIntenta.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
@@ -38,7 +40,6 @@ public class aservice extends Service {
         dialogIntenta.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(dialogIntent);
         //check if alarm exist before popping reminder page
-        Toast.makeText(this, "App Restarted", Toast.LENGTH_LONG).show();
         return Service.START_STICKY;
     }
 
@@ -51,16 +52,22 @@ public class aservice extends Service {
     @Override
     public void onTaskRemoved(Intent rootIntent) {
 
-        /*//check shared prefence for active alarm before exiting
-        Intent dialogIntenta = new Intent(this, HomePageActivity.class);
-        dialogIntenta.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(dialogIntenta);
+        if(mySession.alarmsExist() == true)
+        {
+            Intent dialogIntenta = new Intent(this, HomePageActivity.class);
+            dialogIntenta.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-        Intent dialogIntent = new Intent(this, MyReminder.class);
-        dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        dialogIntenta.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        startActivity(dialogIntent);*/
-        Toast.makeText(this, "App is in Reminder mode, and continously runs in background", Toast.LENGTH_LONG).show();
+            startActivity(dialogIntenta);
+
+            Intent dialogIntent = new Intent(this, MyReminder.class);
+            dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            dialogIntenta.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivity(dialogIntent);
+            Toast.makeText(this, "App is in Reminder mode, and continously runs in background", Toast.LENGTH_LONG).show();
+        }
+
+
+
     }
 
 }

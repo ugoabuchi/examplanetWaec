@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         }
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+        startService(new Intent(getBaseContext(), BootCompleteReceiver.class));
         mySession = new session(getApplicationContext());
         if(mySession.checkLog() == true)
         {

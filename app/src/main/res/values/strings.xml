@@ -21,7 +21,6 @@
         <item>Thursday</item>
         <item>Friday</item>
         <item>Saturday</item>
-        <item>All</item>
     </string-array>
 
     <string-array name="subjects">

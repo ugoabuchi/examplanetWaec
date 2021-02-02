@@ -33,7 +33,7 @@ public class MyBroadcastReceiver extends BroadcastReceiver{
     @Override
     public void onReceive(Context context, Intent intent) {
 
-       /* //get subject title, time set, daylight set and say set
+        //get subject title, time set, daylight set and say set
         String subject = intent.getStringExtra("subject");
         String time = intent.getStringExtra("time");
         String alarmId = intent.getStringExtra("id");
@@ -49,18 +49,7 @@ public class MyBroadcastReceiver extends BroadcastReceiver{
         //start alram screen if(MyReminder.mainActivityIsOpen() == true)
        // Toast.makeText(context, "Alarm recieved", Toast.LENGTH_LONG);
 
-        *//*final Dialog dialog = new Dialog(context);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.setCancelable(false);
-        dialog.setContentView(R.layout.myalarm);
-        dialog.create();
-        dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
-        dialog.show();*/
 
-        MediaPlayer mp = null;
-        mp= MediaPlayer.create(context, R.raw.alarm   );
-        mp.start();
 
     }
 

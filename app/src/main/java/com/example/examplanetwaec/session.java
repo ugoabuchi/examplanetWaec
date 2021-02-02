@@ -169,6 +169,11 @@ public class session {
         }
 
     }
+    public boolean alarmidexist(String alarmid) {
+        SharedPreferences prefs = context.getSharedPreferences("Alarms", 0);
+        return prefs.contains(alarmid);
+
+    }
 
     public List<String> getAlarmsID()
     {
