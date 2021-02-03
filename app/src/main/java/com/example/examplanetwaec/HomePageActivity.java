@@ -54,7 +54,7 @@ public class HomePageActivity extends AppCompatActivity {
     private ScrollView home, subject, topics, blog = null;
     private ImageView himage, simage, bimage, tback, hide, drawerpimage;
     private ConstraintLayout mainscreen, footer;
-    private LinearLayout linearLayout3, replacer, tcontent, bcontent, waec, jamb, scholar, admission, reminder;
+    private LinearLayout linearLayout3, replacer, tcontent, bcontent, waec, jamb, scholar, admission, reminder, notification;
     private TextView drawerplogout, today, wtext, wauthor, jtext, jauthor, stext, sauthor, atext, aauthor;
     private String smode, history;
     private RelativeLayout blogbtn;
@@ -98,6 +98,7 @@ public class HomePageActivity extends AppCompatActivity {
         drawerpimage = drawerLayout.findViewById(R.id.imageView12);
         drawerpname = drawerLayout.findViewById(R.id.textView17);
         reminder = drawerLayout.findViewById(R.id.reminder);
+        notification = drawerLayout.findViewById(R.id.notification);
         drawerplogout = drawerLayout.findViewById(R.id.textView3);
 
         smode = "practice";
@@ -282,6 +283,14 @@ public class HomePageActivity extends AppCompatActivity {
 
             }
         });
+
+        notification.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                        Intent notify = new Intent(HomePageActivity.this, ChatNotificationActivity.class);
+                                        startActivity(notify);
+                                        }
+                                    });
 
 
 

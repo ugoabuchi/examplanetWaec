@@ -142,6 +142,8 @@ public class session {
         }
     }
 
+
+    //alarm preference
     public void addAlarm(String alarmID, Long time, String subject, String stime, String myday, String mytime, String cday) {
         SharedPreferences prefs = context.getSharedPreferences("Alarms", 0);
         SharedPreferences.Editor editor = prefs.edit();
@@ -174,6 +176,90 @@ public class session {
         return prefs.contains(alarmid);
 
     }
+
+
+
+//notification preference
+    public void addNotificcation(String NID, Long time, String message) {
+        SharedPreferences prefs = context.getSharedPreferences("Notification", 0);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(NID, NID+","+time+","+message);
+        editor.commit();
+
+    }
+
+    public void deleteNotification(String NID) {
+        SharedPreferences prefs = context.getSharedPreferences("Notification", 0);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.remove(NID);
+        editor.commit();
+    }
+
+    public boolean notificationExist()
+    {
+        SharedPreferences prefs = context.getSharedPreferences("Notification", 0);
+        if (prefs.getAll().size() > 0) {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+    public boolean notificationidexist(String NID) {
+        SharedPreferences prefs = context.getSharedPreferences("Notification", 0);
+        return prefs.contains(NID);
+
+    }
+    public List<String> getNID()
+    {
+        SharedPreferences prefs = context.getSharedPreferences("Notification", 0);
+        Map<String,?> keys = prefs.getAll();
+        notification Notification = new notification();
+        for(Map.Entry<String,?> entry : keys.entrySet()){
+            Notification.addId(entry.getValue().toString().split(",")[0]);
+
+        }
+
+        return Notification.getNid();
+    }
+
+    public List<String> getNTime()
+    {
+        SharedPreferences prefs = context.getSharedPreferences("Notification", 0);
+        Map<String,?> keys = prefs.getAll();
+        notification Notification = new notification();
+        for(Map.Entry<String,?> entry : keys.entrySet()){
+            Notification.addtime(entry.getValue().toString().split(",")[1]);
+
+        }
+
+        return Notification.getTime();
+    }
+
+    public List<String> getNmessage()
+    {
+        SharedPreferences prefs = context.getSharedPreferences("Notification", 0);
+        Map<String,?> keys = prefs.getAll();
+        notification Notification = new notification();
+        for(Map.Entry<String,?> entry : keys.entrySet()){
+            Notification.addMessage(entry.getValue().toString().split(",")[2]);
+
+        }
+
+        return Notification.getMessage();
+    }
+
+
+
+
+
+
+
+
+
+
 
     public List<String> getAlarmsID()
     {
@@ -337,6 +423,48 @@ public class session {
         public List<String> getcday()
         {
             return  cday;
+        }
+
+    }
+
+
+
+
+
+
+    private class notification{
+        List<String> nid,time,message = null;
+
+        notification()
+        {
+            nid = new ArrayList();
+            time = new ArrayList();
+            message = new ArrayList();
+        }
+
+        public void addId(String id)
+        {
+            nid.add(id);
+        }
+        public void addtime(String timeval)
+        {
+            time.add(timeval);
+        }
+        public void addMessage(String mess)
+        {
+            message.add(mess);
+        }
+        public List<String> getNid()
+        {
+            return  nid;
+        }
+        public List<String> getTime()
+        {
+            return  time;
+        }
+        public List<String> getMessage()
+        {
+            return  message;
         }
 
     }

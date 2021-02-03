@@ -18,26 +18,45 @@
             android:layout_height="230dp"
             android:background="@drawable/ic_home_top">
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/textView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/mali_medium"
-                    android:text="Never miss out\non any info"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="Notifications"
                     android:textColor="@android:color/white"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="@+id/imageView5"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
                 <ImageView
                     android:id="@+id/imageView9"
                     android:layout_width="214dp"
                     android:layout_height="171dp"
-                    android:layout_marginEnd="20dp"
-                    android:alpha="0.7" />
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginBottom="25dp"
+                    android:alpha="0.7"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:srcCompat="@drawable/ic_chatting_img" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="25dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="View updates here"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView10"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
                 <ImageView
                     android:id="@+id/imageView5"
@@ -45,116 +64,37 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="27dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ic_back_arrow" />
 
-                <TextView
-                    android:id="@+id/textView12"
+                <ImageView
+                    android:id="@+id/imageView6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="27dp"
-                    android:fontFamily="@font/mali_medium"
-                    android:text="Notifications"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp" />
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_notification_icon" />
 
-            </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </RelativeLayout>
+
+
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <LinearLayout
+                android:id="@+id/lcontainer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="10dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:orientation="vertical"
-                    android:padding="10dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:layout_marginEnd="20dp"
-                        android:fontFamily="@font/mali_medium"
-                        android:text="30m ago"
-                        android:textColor="@color/appBlue"
-                        android:textSize="12sp" />
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_weight="1"
-                        app:cardBackgroundColor="#E6E6E6"
-                        app:cardCornerRadius="1dp">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:drawableLeft="@drawable/ic_outline_group_24"
-                            android:drawablePadding="10dp"
-                            android:fontFamily="@font/mali_medium"
-                            android:gravity="center_vertical"
-                            android:padding="10dp"
-                            android:text="Damilola, Timileyin and others replied to your comment "
-                            android:textColor="@android:color/black"
-                            android:textSize="15sp"
-                            app:lineHeight="20dp" />
-                    </androidx.cardview.widget.CardView>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-
-                    <TextView
-                        android:id="@+id/textView14"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:layout_marginEnd="20dp"
-                        android:fontFamily="@font/mali_medium"
-                        android:text="1m ago"
-                        android:textColor="@color/appBlue"
-                        android:textSize="12sp" />
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_weight="1"
-                        app:cardBackgroundColor="@android:color/white"
-                        app:cardCornerRadius="1dp">
-
-                        <TextView
-                            android:id="@+id/textView51"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:drawableLeft="@drawable/ic_outline_person_outline_24"
-                            android:drawablePadding="10dp"
-                            android:fontFamily="@font/mali_medium"
-                            android:gravity="center_vertical"
-                            android:padding="10dp"
-                            android:text="Ugochwuku Fortune liked your comment"
-                            android:textColor="@android:color/black"
-                            android:textSize="15sp"
-                            app:lineHeight="20dp" />
-                    </androidx.cardview.widget.CardView>
-                </LinearLayout>
 
             </LinearLayout>
         </ScrollView>
